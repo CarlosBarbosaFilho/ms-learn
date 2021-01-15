@@ -1,0 +1,15 @@
+spring:
+  database: h2
+  console: true
+  path: /h2
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  datasource:
+    url: jdbc:h2:mem:template-clean-architecture
+    username: sa
+    password: sa
+    driverClassName: org.h2.Driver
+
+
