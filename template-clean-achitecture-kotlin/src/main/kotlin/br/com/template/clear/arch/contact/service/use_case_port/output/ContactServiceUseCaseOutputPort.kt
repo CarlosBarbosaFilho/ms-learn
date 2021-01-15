@@ -1,15 +1,15 @@
 package br.com.template.clear.arch.contact.service.use_case_port.output
 
 import br.com.template.clear.arch.contact.service.use_case.data.ContactOutputPort
-import br.com.template.clear.arch.contact.service.use_case_port.data.ContactInputPort
+import br.com.template.clear.arch.contact.service.use_case_port.data.ContactPort
 
 interface ContactServiceUseCaseOutputPort {
 
-    fun create(contactOutputPort: ContactOutputPort): ContactOutputPort
+    fun create(contactPort: ContactPort): ContactPort
 
-    fun getById(id: Long): ContactOutputPort
+    fun getById(id: Long): ContactPort
 
-    fun getAll(): List<ContactOutputPort>
+    fun getAll(): List<ContactPort>
 
     fun remove(id: Long): Unit
 }

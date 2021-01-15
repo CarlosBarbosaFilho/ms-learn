@@ -1,7 +1,7 @@
 package br.com.template.clear.arch.contact.web.resources
 
 import br.com.template.clear.arch.contact.service.use_case.data.ContactOutputPort
-import br.com.template.clear.arch.contact.service.use_case_port.data.ContactInputPort
+import br.com.template.clear.arch.contact.service.use_case_port.data.ContactPort
 import br.com.template.clear.arch.contact.service.use_case_port.input.ContactServiceUseCaseInputPort
 import br.com.template.clear.arch.contact.web.helper.ContactDTO
 import br.com.template.clear.arch.contact.web.helper.toContactInputPort
@@ -16,13 +16,13 @@ class ContactResource(private val contactServiceUseCaseInputPort: ContactService
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    fun getAllContacts(): ResponseEntity<String>{
-        return ResponseEntity.ok("All contact saved")
+    fun getAllContacts(): ResponseEntity<List<ContactPort>>{
+        return ResponseEntity.ok(this.contactServiceUseCaseInputPort.getAll())
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    fun createContact(request: HttpServletRequest, @RequestBody body: ContactDTO  ): ResponseEntity<ContactOutputPort> {
+    fun createContact(request: HttpServletRequest, @RequestBody body: ContactDTO  ): ResponseEntity<ContactPort> {
         return ResponseEntity.ok(this.contactServiceUseCaseInputPort.create(request.toContactInputPort(body)))
     }
 
