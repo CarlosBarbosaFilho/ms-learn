@@ -7,6 +7,8 @@ interface ContactServiceUseCaseOutputPort {
 
     fun create(contactPort: ContactPort): ContactPort
 
+    fun createV1(contactPort: ContactPort): ContactOutputPort
+
     fun getById(id: Long): ContactPort
 
     fun getAll(): List<ContactPort>

@@ -1,9 +1,8 @@
-package br.com.cbgomes.hrworker.web.controller
+package br.com.cbgomes.hrworker.web.resource
 
 import br.com.cbgomes.hrworker.service.use_case_port.data.WorkerPort
 import br.com.cbgomes.hrworker.service.use_case_port.input.WorkerServiceInput
 import br.com.cbgomes.hrworker.web.domain.WorkerDTO
-import br.com.cbgomes.hrworker.web.domain.toDTO
 import br.com.cbgomes.hrworker.web.domain.toPort
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity

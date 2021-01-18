@@ -25,6 +25,15 @@ fun ContactEntity.toContactOutputPort() : ContactPort {
         )
 }
 
+fun ContactEntity.toContactOutputPortV1() : ContactOutputPort {
+        return ContactOutputPort(
+                id = this.id,
+                name = this.name,
+                email = this.email,
+                phone = this.phone
+        )
+}
+
 fun ContactPort.toContactEntity() : ContactEntity{
         return ContactEntity(
                 id = 0,

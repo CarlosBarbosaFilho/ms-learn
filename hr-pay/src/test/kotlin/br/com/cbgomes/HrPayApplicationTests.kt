@@ -1,4 +1,4 @@
-package br.com.cbgomes.pay
+package br.com.cbgomes
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest

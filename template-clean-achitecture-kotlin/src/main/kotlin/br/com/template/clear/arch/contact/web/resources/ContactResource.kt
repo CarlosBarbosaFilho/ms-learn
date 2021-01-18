@@ -26,4 +26,10 @@ class ContactResource(private val contactServiceUseCaseInputPort: ContactService
         return ResponseEntity.ok(this.contactServiceUseCaseInputPort.create(request.toContactInputPort(body)))
     }
 
+    @PostMapping("/v1")
+    @ResponseStatus(HttpStatus.CREATED)
+    fun createContactVersionOne(request: HttpServletRequest, @RequestBody body: ContactDTO  ): ResponseEntity<ContactOutputPort> {
+        return ResponseEntity.ok(this.contactServiceUseCaseInputPort.createV1(request.toContactInputPort(body)))
+    }
+
 }

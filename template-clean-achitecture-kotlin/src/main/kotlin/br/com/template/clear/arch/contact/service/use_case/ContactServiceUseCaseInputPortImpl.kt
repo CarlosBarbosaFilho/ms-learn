@@ -14,6 +14,10 @@ class ContactServiceUseCaseInputPortImpl (private val contactServiceUseCaseOutpu
         return this.contactServiceUseCaseOutputPort.create(contactPort)
     }
 
+    override fun createV1(contactPort: ContactPort): ContactOutputPort {
+        return this.contactServiceUseCaseOutputPort.createV1(contactPort)
+    }
+
     override fun getById(id: Long): ContactPort {
         return this.contactServiceUseCaseOutputPort.getById(id)
     }
