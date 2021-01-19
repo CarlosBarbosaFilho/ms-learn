@@ -1,9 +1,0 @@
-server:
-  port: 8081
-spring:
-  application:
-    name: payment
-
-hr-worker:
-  host: http://localhost:8080/api/workers/
-
