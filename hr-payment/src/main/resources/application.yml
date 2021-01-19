@@ -6,4 +6,3 @@ spring:
 
 hr-worker:
   host: http://localhost:8080/api/workers/
-

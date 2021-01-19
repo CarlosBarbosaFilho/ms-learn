@@ -8,7 +8,7 @@
         <version>2.4.2</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>br.com.cbgomes.payment</groupId>
+    <groupId>br.com.cbgomes</groupId>
     <artifactId>hr-payment</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>hr-payment</name>
@@ -51,10 +51,6 @@
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-stdlib-jdk8</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>

@@ -1,5 +1,6 @@
 package br.com.cbgomes.pay.presenters.service
 
+import br.com.cbgomes.pay.presenters.db.WorkerEntity
 import br.com.cbgomes.pay.web.domain.PaymentOutputPort
 import br.com.cbgomes.pay.service.use_case_port.output.PaymentOutputService
 import org.springframework.beans.factory.annotation.Autowired
@@ -10,13 +11,13 @@ import org.springframework.web.client.RestTemplate
 @Service
 class PaymentServiceClient(val restTemplate: RestTemplate,
                            @Value("\${hr-worker.host}") private val hostWorker: String,
-                           @Autowired
-                           val workerFeignClient: WorkerFeignClient
+                           //@Autowired
+                           //val workerFeignClient: WorkerFeignClient
 ): PaymentOutputService {
 
     override fun getPayment(worker: Long, days: Int): PaymentOutputPort {
-      //var worker = this.restTemplate.getForObject(this.hostWorker+"$worker", WorkerEntity::class.java )
-        var worker = this.workerFeignClient.getWorkerById(id = worker).body
+        var worker = this.restTemplate.getForObject(this.hostWorker+"$worker", WorkerEntity::class.java )
+        //var worker = this.workerFeignClient.getWorkerById(id = worker).body
         return PaymentOutputPort(worker!!.name, worker.daily_income, days.toBigDecimal())
     }
 

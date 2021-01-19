@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.ResponseStatus
 
-@FeignClient("hr-worker")
+@FeignClient("hr-worker", url = "http://localhost:8080/api/workers/")
 @Component
 interface WorkerFeignClient {
 
