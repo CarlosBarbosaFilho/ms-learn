@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
 
 @Service
-class PaymentServiceClient(val workerFeignClient: WorkerFeignClient,
-                           @Value("\${hr-worker.host}") private val hostWorker: String,
+class PaymentServiceClient(val workerFeignClient: WorkerFeignClient
+                           //@Value("\${hr-worker.host}") private val hostWorker: String,
 ): PaymentOutputService {
 
     override fun getPayment(worker: Long, days: Int): PaymentOutputPort {

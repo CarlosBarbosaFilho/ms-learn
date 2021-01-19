@@ -8,8 +8,10 @@ import org.springframework.stereotype.Component
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.ResponseStatus
+//url = "http://localhost:8080/api/workers/"
 
-@FeignClient("hr-worker", url = "http://localhost:8080/api/workers/")
+
+@FeignClient(name="hr-worker",url = "http://localhost:8080/api/workers/")
 @Component
 interface WorkerFeignClient {
 
