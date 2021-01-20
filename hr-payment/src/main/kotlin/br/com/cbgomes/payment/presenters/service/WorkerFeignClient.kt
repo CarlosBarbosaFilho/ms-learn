@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseStatus
 //url = "http://localhost:8080/api/workers/"
 
 
-@FeignClient(name="hr-worker",url = "http://localhost:8080/api/workers/")
+@FeignClient(name="hr-worker", path = "/api/workers/")
 @Component
 interface WorkerFeignClient {
 
