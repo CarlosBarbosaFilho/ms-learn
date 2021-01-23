@@ -1,4 +1,6 @@
 spring:
+    application:
+        name: hr-worker
     database: h2
     console: true
     path: /h2
@@ -11,5 +13,11 @@ spring:
         username: sa
         password: sa
         driverClassName: org.h2.Driver
+eureka:
+    client:
+        service-url:
+            defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+    instance:
+        prefer-ip-address: true
 
 
