@@ -5,6 +5,7 @@ import br.com.cbgomes.hrworker.service.use_case_port.input.WorkerServiceInput
 import br.com.cbgomes.hrworker.web.domain.WorkerDTO
 import br.com.cbgomes.hrworker.web.domain.toPort
 import org.slf4j.LoggerFactory
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.core.env.Environment
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -13,7 +14,12 @@ import javax.servlet.http.HttpServletRequest
 
 @RestController
 @RequestMapping("/api/workers")
-class WorkerResource(private val workerServiceInput: WorkerServiceInput, val environment: Environment) {
+class WorkerResource(
+        private val workerServiceInput: WorkerServiceInput,
+        @Value("\${test.config}") private val config: String,
+        val environment: Environment,
+
+) {
 
     private val logger = LoggerFactory.getLogger(WorkerResource::class.java)
 
@@ -28,6 +34,13 @@ class WorkerResource(private val workerServiceInput: WorkerServiceInput, val env
     fun getWorkerById(@PathVariable("id") id: Long): ResponseEntity<WorkerPort>{
         logger.info("PORT " +environment.getProperty("local.server.port"))
         return ResponseEntity.ok(this.workerServiceInput.getWorkerById(id))
+    }
+
+    @GetMapping("/configurations")
+    @ResponseStatus(HttpStatus.OK)
+    fun getConfigurations(): ResponseEntity<Void>{
+        logger.info("CONFIGS:  ${this.config}")
+        return ResponseEntity.noContent().build()
     }
 
     @GetMapping
