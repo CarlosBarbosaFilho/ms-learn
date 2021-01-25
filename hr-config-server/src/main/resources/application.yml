@@ -7,5 +7,7 @@ spring:
         git:
           default-label: main
           uri: https://github.com/CarlosBarbosaFilho/hr-config-server
+          username: ${GITHUB_CONFIG_USER}
+          password: ${GITHUB_CONFIG_PASSWORD}
 server:
   port: 8888
