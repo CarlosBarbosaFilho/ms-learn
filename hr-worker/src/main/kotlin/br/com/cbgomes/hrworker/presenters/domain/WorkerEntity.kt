@@ -7,9 +7,9 @@ import javax.persistence.*
 @Entity
 @Table(name = "tb_worker")
 data class WorkerEntity(
-        @Id @GeneratedValue(strategy = GenerationType.IDENTITY) val id: Long?,
-        @Column var name: String,
-        @Column var daily_income: BigDecimal
+        @Id @GeneratedValue(strategy = GenerationType.IDENTITY) val id: Long? = 0,
+        @Column var name: String = "",
+        @Column var daily_income: BigDecimal = BigDecimal.ZERO
 )
 
 fun WorkerEntity.toPort() = WorkerPort(
