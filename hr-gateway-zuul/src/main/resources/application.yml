@@ -20,3 +20,6 @@ zuul:
     payment:
       service-id: hr-payment
       path: /hr-payment/**
+    user:
+      service-id: hr-user
+      path: /hr-user/**
