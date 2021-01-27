@@ -34,4 +34,8 @@ class UserOutputPortImpl(private val userRepository: UserRepository): UserOutput
     override fun deleteUser(id: Long) {
         this.userRepository.deleteById(id)
     }
+
+    override fun getUserByEmail(email: String): UserPort {
+        return this.userRepository.findByEmail(email).toUserPort()
+    }
 }

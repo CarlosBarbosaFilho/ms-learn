@@ -14,4 +14,6 @@ interface UserInputPort {
     fun updateUser(body: UserDTO, idUser: Long): UserPort
 
     fun deleteUser(id: Long)
+
+    fun getUserByEmail(email: String): UserPort
 }

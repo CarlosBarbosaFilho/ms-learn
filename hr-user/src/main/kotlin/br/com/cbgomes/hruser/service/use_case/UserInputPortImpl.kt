@@ -28,4 +28,8 @@ class UserInputPortImpl(val userOutputPort: UserOutputPort): UserInputPort {
     override fun deleteUser(id: Long) {
         this.userOutputPort.deleteUser(id)
     }
+
+    override fun getUserByEmail(email: String): UserPort {
+        return this.userOutputPort.getUserByEmail(email)
+    }
 }

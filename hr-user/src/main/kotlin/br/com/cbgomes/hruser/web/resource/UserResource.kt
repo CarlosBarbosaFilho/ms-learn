@@ -45,4 +45,9 @@ class UserResource (private val userInputPort: UserInputPort){
         return ResponseEntity.notFound().build()
     }
 
+    @GetMapping("/search")
+    fun getUserByEmail(@RequestParam(required = true) email: String): ResponseEntity<UserPort> {
+        return ResponseEntity.ok(this.userInputPort.getUserByEmail(email))
+    }
+
 }
