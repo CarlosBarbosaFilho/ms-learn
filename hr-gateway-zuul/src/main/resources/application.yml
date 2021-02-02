@@ -11,6 +11,18 @@ spring:
   application:
     name: hr-gateway
 
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 1000000
+
+ribbon:
+  ConnectTimeout: 100000
+  ReadTimeout: 200000
+
 ### CONFIGURATION ROUTES ####
 zuul:
   routes:
@@ -23,3 +35,7 @@ zuul:
     user:
       service-id: hr-user
       path: /hr-user/**
+    oauth:
+      service-id: hr-oauth
+      path: /hr-oauth/**
+      sensitive-headers: Cookie,Set-Cookie

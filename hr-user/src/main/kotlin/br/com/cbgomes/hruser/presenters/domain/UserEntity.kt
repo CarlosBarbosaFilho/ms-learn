@@ -25,9 +25,9 @@ data class UserEntity(
 fun UserEntity.toUserPort(): UserPort {
         return UserPort(
                 id = this.id,
-                name_user = this.name,
-                email_user = this.email,
-                password_user = this.password,
-                roles = this.roles
+                name = this.name,
+                email = this.email,
+                pass = this.password,
+                roles = this.roles.map { it.toRolePort() }
         )
 }

@@ -9,3 +9,8 @@ eureka:
     prefer-ip-address: true
 server:
   port: 8084
+security:
+  oauth2:
+    authorization:
+      jwt:
+        key-store-password: password
