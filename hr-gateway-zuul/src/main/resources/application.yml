@@ -6,7 +6,7 @@ eureka:
   instance:
     prefer-ip-address: true
 server:
-  port: 8756
+    port: 8756
 spring:
   application:
     name: hr-gateway
